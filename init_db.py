@@ -10,7 +10,7 @@ def init_db():
     cursor = conn.cursor()
 
     if not db_exists:
-        print("🛠️  Initializing database...")
+        print("Initializing database...")
 
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS users (
