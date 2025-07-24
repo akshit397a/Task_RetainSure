@@ -1,12 +1,12 @@
 # 📄 CHANGES.md
 
-## ✅ Overview
+## Overview
 
 This document outlines the key issues identified in the legacy user management API and the improvements made during refactoring. The aim was to enhance **code quality, security, maintainability, and structure**, without adding new features or changing the core functionality.
 
 ---
 
-## 🛠️ Major Issues Identified
+## 🛠Major Issues Identified
 
 ### 1. **Poor Code Structure**
 - All logic was crammed into `app.py`.
@@ -30,9 +30,9 @@ This document outlines the key issues identified in the legacy user management A
 
 ---
 
-## 🚀 Refactoring Changes Made
+## Refactoring Changes Made
 
-### 🔧 1. Project Restructure
+### 1. Project Restructure
 Split the monolith into a modular structure:
 
 ```
@@ -53,27 +53,27 @@ Split the monolith into a modular structure:
 └── CHANGES.md
 ```
 
-### 🔐 2. Security Improvements
+### 2. Security Improvements
 - Added password hashing using `werkzeug.security`.
 - Moved SQL logic to parameterized queries to prevent injection attacks.
 - Introduced input validation utilities for user data.
 
-### 📦 3. Maintainable Code & Best Practices
+### 3. Maintainable Code & Best Practices
 - All DB operations centralized in `db.py`.
 - Business logic moved to `user_service.py`.
 - Created `User` model using Python’s `dataclass`.
 
-### 🛡️ 4. Robust Error Handling
+### 4. Robust Error Handling
 - Wrapped all endpoints with error-safe responses.
 - Consistent use of HTTP status codes (`200`, `201`, `400`, `404`, `500`).
 
-### 🧪 5. Future Testability
+### 5. Future Testability
 - All business logic is now testable independently of routes.
 - Clear separation enables unit and integration testing.
 
 ---
 
-## ⚖️ Trade-offs / Assumptions
+## Trade-offs / Assumptions
 
 - Did not introduce full JWT-based authentication to avoid over-engineering.
 - Password hashing added, but login still returns raw user data for backward compatibility (should be avoided in production).
@@ -81,20 +81,20 @@ Split the monolith into a modular structure:
 
 ---
 
-## 🤖 AI Usage Disclosure
+## AI Usage Disclosure
 
-### ✅ Tools Used
+### Tools Used
 
 - **ChatGPT-4** – For architectural restructuring, validation logic, and modular Flask patterns.
 - **GitHub Copilot** – For fast generation of route handlers, decorators, and Flask boilerplate.
 - **Claude** – Reviewed documentation clarity and offered refactoring suggestions.
+  
 - **Official Flask & OWASP Docs** – For secure API design and RESTful practices.
-
-- ✍️ **Human Review**: All AI-generated content was reviewed and adapted as per best practices.
+- **Human Review**: All AI-generated content was reviewed and adapted as per best practices.
 
 ---
 
-## ⏭️ With More Time, I Would:
+## ⏭With More Time, I Would:
 - Implement full JWT-based authentication and role-based access control.
 - Replace raw SQL with SQLAlchemy ORM.
 - Write unit and integration tests using `pytest`.
