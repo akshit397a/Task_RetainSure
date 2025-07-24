@@ -22,6 +22,6 @@ def init_db():
         """)
 
         conn.commit()
-        print("✅ Database initialized.")
+        print("Database initialized.")
 
     conn.close()
