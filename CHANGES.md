@@ -1,4 +1,4 @@
-# 📄 CHANGES.md
+# CHANGES.md
 
 ## Overview
 
@@ -6,7 +6,7 @@ This document outlines the key issues identified in the legacy user management A
 
 ---
 
-## 🛠Major Issues Identified
+## Major Issues Identified
 
 ### 1. **Poor Code Structure**
 - All logic was crammed into `app.py`.
@@ -94,7 +94,7 @@ Split the monolith into a modular structure:
 
 ---
 
-## ⏭With More Time, I Would:
+## With More Time, I Would:
 - Implement full JWT-based authentication and role-based access control.
 - Replace raw SQL with SQLAlchemy ORM.
 - Write unit and integration tests using `pytest`.
